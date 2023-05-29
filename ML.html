@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>入门说明</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<pre><code>                                                  机器学习势函数训练简介入门：
+</code></pre>
+
+<h6>这是一份对于机器学习势训练（DeepMD-kit 和 DPGen）的简洁入门说明，实际操作过程中应结合实际情况与相关文献。</h6>
+<h1>写在前面的话</h1>
+<p>在学习机器学习势函数的时候，有必要对基本的材料计算进行学习，比如第一性原理计算，分子动力学模拟等等，只追求机器学习而不关注材料本身是做不出好效果的，在做机器学习势函数的时候，中间会交叉着大量的第一性原理以及分子动力学模拟的知识，建议对两者都做到了解并能应用。</p>
+<h1>机器学习</h1>
+<p>首先我们先介绍什么是机器学习，机器学习是指一类能够让计算机从操作者所提供的数据中学习一些特定特征并且能够做出学习和预测的算法，常见的机器学习算法有1.支持向量机 2.决策树 3.随机森林 4.神经网络等等对于一些复杂的机器学习算法我们并不太需要都去了解清楚。有关机器学习势函数的构建，已经有非常多的学者提出了很多构建方法，相关的综述已由<a href="https://www.nature.com/articles/s41563-020-0777-6">Pascal Friederich,et,al.</a>发表。如果想详细了解机器学习势领域的相关方法和进展，有必要参考以上文献，因为这篇文档中所介绍的机器学习势方法是在前人基础上发展而来，很多核心的思想与前人所提出的方法大同小异。  在综述当中，涉及了很多种机器学习算法，在本篇文章中主要介绍神经网络，因为DeepMD-kit和DPGen中用的是神经网络结构。 </p>
+<p>有关神经网络的介绍以及它具体的实现细节就不在本篇文档中涉及了，(比我讲的好的人太多了)对于入门的话在此推荐一下吴恩达老师的课<a href="https://www.bilibili.com/video/BV1gb411j7Bs">深度学习<em>吴恩达</em>DeepLearning.ai</a>，建议观看的顺序的话就是从头看到尾(有一些看似不太重要的课程其实在后续实际操作势函数训练的过程中能明白一些处理细节)，一节课中有作业，为了更好的理解建议这些作业都可以适当的做一下，<a href="https://zhuanlan.zhihu.com/p/136468754">作业答案</a>网上都是有的。学习完理论课之后，有必要增强自己的编程能力，主要为linux操作系统以及python语言得做到比较熟悉。对于这两部分网上有太多的学习资料就不作推荐了，最重要的是实践。</p>
+<h1>基于神经网络结构的机器学习势函数(DeepMD-kit)</h1>
+<p>DeepMD-kit是一个做的比较成功且能够实际运用的机器学习势函数架构。其核心思想是建立为局域环境建立描述符，在截断半径下局域环境能量的加和等于系统的总能量，以此为基础让计算机学习描述符中提供的能量和力的信息。概念的初始证明是在<a href="https://arxiv.org/abs/1707.01478">Deep Potential</a>论文中，该论文采用了一种仅用势能训练神经网络模型的方法。对于典型的从头开始分子动力学（AIMD）数据集，这不足以重现轨迹。深度势能分子动力学（<a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.143001">DeepMD</a>）模型克服了这一限制。此外，DeepMD中的学习过程比深度电位方法有了显着改善，这要归功于一系列灵活的损失函数。以这种方式构建的NN电位在扩展和有限系统中精确地再现了经典和量子（路径积分）中的AIMD轨迹，其成本随系统尺寸线性缩放，并且始终比等效的AIMD仿真低几个数量级。尽管效率很高，但原始的深度势模型满足势能模型的广泛对称不变属性，代价是在模型中引入不连续性。这对规范采样的轨迹影响可以忽略不计，但对于动态和机械性能的计算可能还不够。这些要点促使Deep Potential-Smooth Edition被开发（<a href="https://arxiv.org/abs/1805.09003">DeepPot-SE</a>）模型，该模型用平滑和自适应的嵌入网络取代了非平滑的局部框架。DeepPot-SE在模拟物理，化学，生物学和材料科学领域感兴趣的多种系统方面表现出了巨大的能力。</p>
+<p>以下简单介绍一下DeepMD的原理，具体的实现细节得详细阅读以上三篇文献，对于未来真正投身该领域的话，对于自己所用工具必须做到足够的了解。</p>
+<hr />
+<ol>
+<li>简介</li>
+</ol>
+<p>在过去的几十年时间里，因为在凝聚态物理、材料科学、高分子化学和分子生物学等领域的广泛应用，分子动力学模拟方法被越来越多人关注和使用，这种模拟手段让研究人员有能力去观察原子或分子间的运动行为，在一些实验手段极难，甚至无法探索的问题上，分子动力学模拟方法能够极大地拓宽我们的认知边界。众所周知，分子动力学模拟的结果好坏取决于势函数的准确性，如何能精确地表示势函数是分子动力学模拟中极其重要的问题。经验势模型与量子力学模型是最为常用的两种方法，经验势通常由物理直觉出发，给出关于体系能量的数项组成，因为形式简单而通常有较快的计算速度，但是无法保证精度。与之相反，量子力学模型通过近似求解电子结构来计算原子的受力和能量，具有非常高的精度，但随之而来的是计算速度的限制，无法应用于更大型或更长时间的计算中。总而言之，在如何精确地表示势能面这个问题上，人们需要在精度和速度上做出选择，无法两者兼顾。但随着AI for Science浪潮的到来，机器学习势函数正在帮助人们跨越精度与速度之间的鸿沟。描述子与机器学习算法是机器学习势函数的两个主要组成部分。描述子用于保证所研究结构的对称性，机器学习算法通过训练量子力学精度下的数据，建立原子结构与体系能量之间的函数关系，训练完成后，机器学习势函数能给出与训练数据相同的量子力学精度，如果训练数据是由密度泛函理论计算得出，那么机器学习势函数也会是密度泛函理论的精度，但与密度泛函理论的计算量随着研究体系扩大而三次方增长不同，机器学习势函数的计算量只与体系大小呈线性关系。到目前为止，已经有相当多的研究提出了不同形式的机器学习势函数模型，例如Behler-Parrinello neural network potentials(<strong>BPNNP</strong>)<a href="https://doi.org/10.1103/PhysRevLett.98.146401">[1]</a>, Gaussian approximation potentials(<strong>GAP<strong>)<a href="https://doi.org/10.1103/PhysRevLett.104.136403">[2]</a>, spectral neighbor analysis potentials(</strong>SNAP</strong>)<a href="https://doi.org/10.1007/978-3-319-07518-1_2">[3]</a>, <strong>ANI-1</strong><a href="https://doi.org/10.1039/C6SC05720A">[4]</a>, <strong>SchNet</strong><a href="https://dl.acm.org/doi/10.5555/3294771.3294866">[5]</a> and <strong>Deep Potential</strong>[<a href="https://doi.org/10.4208/cicp.OA-2017-0213">[6]</a>,<a href="https://doi.org/10.1103/physrevlett.120.143001">[7]</a>,<a href="http://dl.acm.org/doi/10.55v55/3327345.3327356">[8]</a>],虽然已取得了较大成功，但机器学习势函数模型仍有很多极具挑战性的问题等待解决<a href="https://doi.org/10.1002/adma.201902765">[9]</a>,例如忽略截断半径外的相互作用导致的系统性预测误差<a href="https://doi.org/10.1063/5.0031215">[10]</a>等问题
+本章节将重点介绍DP模型，除了能达到量子力学的精度外，目前的DP模型还具有以下特点：(1)易于保持体系的对称性，尤其是当体系存在多种元素时；(2)计算效率高，比密度泛函理论至少快五个数量级；(3)端到端模型，减少人为干预的可能；(4)支持MPI和GPU，能够在现代异构高性能超级计算机上高效运行。目前，DP模型已经成功地应用在水和含水系统[<a href="https://doi.org/10.1103/PhysRevB.102.214113">11</a>,<a href="https://doi.org/10.1039/D0CP01893G">12</a>,<a href="https://doi.org/10.1039/C9SC05116C">13</a>,<a href="https://doi.org/10.1103/PhysRevB.104.224202">14</a>],金属和合金[<a href="https://doi.org/10.1103/PhysRevMaterials.3.023804">15</a>,<a href="https://doi.org/10.3389/fchem.2020.589795">16</a>,<a href="https://doi.org/10.1088/1674-1056/abf134">17</a>,<a href="https://doi.org/10.1038/s41524-021-00661-y">18</a>],相图[<a href="https://doi.org/10.1038/s41467-020-16372-9">19</a>,<a href="https://doi.org/10.1103/PhysRevLett.126.236001">20</a>,<a href="https://doi.org/10.1103/PhysRevLett.127.080603">21</a>],高熵陶瓷[<a href="https://doi.org/10.1016/j.jmst.2020.01.005">22</a>,<a href="https://doi.org/10.1016/j.jmst.2020.07.014">23</a>],化学反应[<a href="https://doi.org/10.1038/s41467-020-19497-z">24</a>,<a href="https://doi.org/10.1021/acs.energyfuels.0c03211">25</a>,<a href="https://doi.org/10.26434/chemrxiv.14120447">26</a>],固态电解质<a href="https://doi.org/10.1063/5.0041849">[27]</a>,离子液体<a href="https://doi.org/10.1021/acsami.0c20665">[28]</a>等研究领域中。
+对于最近DP模型在材料领域方面的研究，我们参考了此篇文献<a href="https://doi.org/10.48550/arXiv.2203.00393">[29]</a>.</p>
+<p>2.. 体系的总能量取决于每个原子能量之和。</p>
+<p>3.. 每个原子的能量由局域环境(截断半径内近邻原子)所决定。</p>
+<p>4..  具有旋转，平移，交换对称性的描述符被制作出。
+<img src="https://pic2.zhimg.com/v2-6eda0416d968ad761e0f7172cdadbf85_r.jpg" alt="picture" />
+<a href="https://arxiv.org/abs/1805.09003"><em>Zhang L , Han J , Han W , et al. End-to-end Symmetry Preserving Inter-atomic Potential Energy Model for Finite and Extended Systems[J]. 2018.</em></a> </p>
+<h3>理论</h3>
+<p>下面我们先介绍一些定义。首先我们可以对一个包含 <img src="https://latex.codecogs.com/svg.image?N"> 个原子的系统定义一个坐标矩阵 <img src="https://latex.codecogs.com/svg.image?\mathcal{R}&space;\in&space;\mathbb{R}^{N&space;\times&space;3}">，</p>
+<p><img src="https://latex.codecogs.com/svg.image?\mathcal{R}=\left\{{r}_{1}^{T},&space;\cdots,&space;{r}_{i}^{T},&space;\cdots,&space;{r}_{N}^{T}\right\}^{T},&space;{r}_{i}=\left(x_{i},&space;y_{i},&space;z_{i}\right),(1)"></p>
+<p><img src="https://latex.codecogs.com/svg.image?{r}_{i}"> 表示原子 <img src="https://latex.codecogs.com/svg.image?i"> 的三维笛卡尔坐标。为了之后DP理论介绍的方便，我们可以将坐标矩阵 <img src="https://latex.codecogs.com/svg.image?\mathcal{R}"> 转换成一系列局域坐标矩阵 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\left\{{\mathcal{R}}^{i}\right\}_{i=1}^{N}">,</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{R}}^{i}=\left\{{r}_{1&space;i}^{T},&space;\cdots,&space;{r}_{j&space;i}^{T},&space;\cdots,&space;{r}_{N_{i},&space;i}^{T}\right\}^{T},&space;{r}_{j&space;i}=\left(x_{j&space;i},&space;y_{j&space;i},&space;z_{j&space;i}\right),(2)"></p>
+<p>其中 <img src="https://latex.codecogs.com/svg.image?\dpi{110}N_{i}"> 是原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 在截断半径为<img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{c}">下的近邻原子数， <img src="https://latex.codecogs.com/svg.image?j&space;\left(1&space;\leq&space;j&space;\leq&space;N_{i}\right)"> 表示原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 的近邻原子编号, <img src="https://latex.codecogs.com/svg.image?\dpi{110}{r}_{j&space;i}&space;\equiv&space;{r}_{j}-{r}_{i}"> 表示的是原子<img src="https://latex.codecogs.com/svg.image?\dpi{110}j"> 和原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 之间的相对距离。</p>
+<p>在DP方法中, 一个系统的总能量 <img src="https://latex.codecogs.com/svg.image?\dpi{110}E"> 可以被看作是各个原子的局域能量贡献的总和</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}&space;E=\sum_{i}&space;E_{i},(3)"></p>
+<p>其中 <img src="https://latex.codecogs.com/svg.image?\dpi{110}E_{i}"> 是原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 的局域能量. <img src="https://latex.codecogs.com/svg.image?\dpi{110}E_{i}"> 取决于原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 的局域环境:</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}&space;E=\sum_{i}&space;E_{i}=\sum_{i}&space;E\left(\mathcal{R}^{i}\right),(4)"></p>
+<p>从 <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{R}}^{i}"> 到 <img src="https://latex.codecogs.com/svg.image?\dpi{110}E_{i}"> 的映射可以由两步来构建。<br />
+第一步，如同上面图片里展示的一样, <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{R}}^{i}"> 要映射到特征矩阵，或者说描述子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{D}}^{i}">，这里的 <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{D}}^{i}"> 保留了体系的平移、旋转和置换不变性。具体来说， <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{R}}^{i}&space;\in&space;\mathbb{R}^{N_{i}&space;\times&space;3}"> 首先被映射到一个扩展矩阵 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\tilde{{\mathcal{R}}}^{i}&space;\in&space;\mathbb{R}^{N_{i}&space;\times&space;4}">，</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}&space;\left\{x_{j&space;i},&space;y_{j&space;i},&space;z_{j&space;i}\right\}&space;\mapsto\left\{s\left(r_{j&space;i}\right),&space;\hat{x}_{j&space;i},&space;\hat{y}_{j&space;i},&space;\hat{z}_{j&space;i}\right\},(5)"></p>
+<p>其中 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\hat{x}_{j&space;i}=\frac{s\left(r_{j&space;i}\right)&space;x_{j&space;i}}{r_{j&space;i}}">, <img src="https://latex.codecogs.com/svg.image?\dpi{110}\hat{y}_{j&space;i}=\frac{s\left(r_{j&space;i}\right)&space;y_{j&space;i}}{r_{j&space;i}}">,  <img src="https://latex.codecogs.com/svg.image?\dpi{110}\hat{z}_{j&space;i}=\frac{s\left(r_{j&space;i}\right)&space;z_{j&space;i}}{r_{j&space;i}}">. <img src="https://latex.codecogs.com/svg.image?\dpi{110}s\left(r_{j&space;i}\right)"> 是一个权重函数，用来减少离原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 比较远的原子的权重, 定义如下:</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}s\left(r_{j&space;i}\right)=&space;\begin{cases}\frac{1}{r_{j&space;i}},&space;&amp;&space;r_{j&space;i}<r_{c&space;s}&space;\\&space;\frac{1}{r_{j&space;i}}&space;\{&space;{(\frac{r_{j&space;i}&space;-&space;r_{c&space;s}}{&space;r_c&space;-&space;r_{c&space;s}})}^3&space;(-6&space;{(\frac{r_{j&space;i}&space;-&space;r_{c&space;s}}{&space;r_c&space;-&space;r_{c&space;s}})}^2&space;&plus;15&space;\frac{r_{j&space;i}&space;-&space;r_{c&space;s}}{&space;r_c&space;-&space;r_{c&space;s}}&space;-10)&space;&plus;1&space;\},&space;&amp;&space;r_{c&space;s}<r_{j&space;i}<r_{c}&space;\\&space;0,&space;&amp;&space;r_{j&space;i}>r_{c}\end{cases},(6)"></p>
+<p>其中 <img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{j&space;i}"> 是原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 和原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}j"> 之间的欧式距离, <img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{cs}"> 是“平滑截断半径”。引入 <img src="https://latex.codecogs.com/svg.image?\dpi{110}s\left(r_{j&space;i}\right)"> 之后 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\tilde{{\mathcal{R}}}^{i}"> 里的成分会从 <img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{cs}"> 到 <img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{c}"> 平滑地趋于零。 接着 <img src="https://latex.codecogs.com/svg.image?\dpi{110} \{s\left(r_{j&space;i}\right)\}_{j=1}^{N_i}">, i.e. 也就是 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\tilde{{\mathcal{R}}}^{i}"> 的第一列, 被一个嵌入神经网络映射到一个嵌入矩阵 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\mathcal{G}^{i&space;1}&space;\in&space;\mathbb{R}^{N_{i}&space;\times&space;M_{1}}">. 选取 <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{G}}^{i&space;1}&space;\in&space;\mathbb{R}^{N_{i}&space;\times&space;M_{1}}"> 的前 <img src="https://latex.codecogs.com/svg.image?\dpi{110}M_{2}(<M_{1})"> 列，我们就得到了另外一个嵌入矩阵 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\mathcal{G}^{i&space;2}&space;\in&space;\mathbb{R}^{N_{i}&space;\times&space;M_{2}}">. 最后，我们就可以得到原子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}i"> 的描述子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{D}}^{i}">：</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}\mathcal{D}^{i}=\left(\mathcal{G}^{i&space;1}\right)^{T}&space;\tilde{\mathcal{R}}^{i}\left(\tilde{\mathcal{R}}^{i}\right)^{T}&space;\mathcal{G}^{i&space;2},(7)"></p>
+<p>在描述子中, 平移和旋转不变性是由矩阵乘积 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\tilde{\mathcal{R}}^{i}\left(\tilde{\mathcal{R}}^{i}\right)^{T}"> 来保证的, 置换不变性是由矩阵乘积 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\left(\mathcal{G}^{i}\right)^{T}&space;\tilde{\mathcal{R}}^{i}"> 来保证的。  </p>
+<p>第二步, 每一个描述子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}{\mathcal{D}}^{i}"> 都由一个拟合神经网络被映射到一个局域的能量 <img src="https://latex.codecogs.com/svg.image?\dpi{110}E_{i}"> 上面。</p>
+<p>嵌入神经网络 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\mathcal{N}^e"> 和拟合神经网络 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\mathcal{N}^f"> 都是包含很多隐藏层的前馈神经网络。 前一层的数据 <img src="https://latex.codecogs.com/svg.image?\dpi{110}d_{l}^{\mathrm{in}}"> 是由一个线性运算和一个非线性的激活函数传递到下一层的数据 <img src="https://latex.codecogs.com/svg.image?\dpi{110}d_{k}^{\mathrm{out}}">.</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}d_{k}^{o&space;u&space;t}=\varphi\left(\sum_{k&space;l}&space;w_{k&space;l}&space;d_{l}^{i&space;n}&plus;&space;b_{k}\right),(8)"></p>
+<p>在公式（8）中, <img src="https://latex.codecogs.com/svg.image?\dpi{110}{w}_{k&space;l}"> 是权重参数, <img src="https://latex.codecogs.com/svg.image?\dpi{110}{b}_{k}"> 是偏置参数，<img src="https://latex.codecogs.com/svg.image?\dpi{110}\varphi"> 是一个非线性的激活函数. 需要注意的是在最后一层的输出节点是没有非线性激活函数的。在嵌入网络和拟合网络中的参数由最小化代价函数 <img src="https://latex.codecogs.com/svg.image?\dpi{110}L"> 得到:</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}L\left(p_{\epsilon},&space;p_{f},&space;p_{\xi}\right)=\frac{p_{\epsilon}}{N}&space;\Delta&space;\epsilon^{2}&plus;\frac{p_{f}}{3&space;N}&space;\sum_{i}\left|\Delta&space;{F}_{i}\right|^{2}&plus;\frac{p_{\xi}}{9N}\|\Delta&space;\xi\|^{2},(9)"></p>
+<p>其中 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\Delta&space;\epsilon">, <img src="https://latex.codecogs.com/svg.image?\dpi{110}\Delta&space;{F}_{i}">, 和 <img src="https://latex.codecogs.com/svg.image?\dpi{110}\Delta&space;\xi"> 分别表示能量、力和维里的方均根误差 (RMSE) .
+在训练的过程中, 前置因子 <img src="https://latex.codecogs.com/svg.image?\dpi{110}p_{\epsilon}">, <img src="https://latex.codecogs.com/svg.image?\dpi{110}p_{f}">, 和 <img src="https://latex.codecogs.com/svg.image?\dpi{110}p_{\xi}"> 由公式</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}p(t)=p^{\operatorname{limit}}\left[1-\frac{r_{l}(t)}{r_{l}^{0}}\right]&plus;p^{\operatorname{start}}\left[\frac{r_{l}(t)}{r_{l}^{0}}\right],(10)"></p>
+<p>来决定，其中 <img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{l}(t)"> 和 <img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{l}^{0}"> 分别表示在训练步骤 <img src="https://latex.codecogs.com/svg.image?\dpi{110}t"> 和训练步骤0 时的误差。 <img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{l}(t)"> 的定义为</p>
+<p><img src="https://latex.codecogs.com/svg.image?\dpi{110}r_{l}(t)=r_{l}^{0}&space;\times&space;d_{r}^{t&space;/&space;d_{s}},(11)"></p>
+<p>其中 <img src="https://latex.codecogs.com/svg.image?\dpi{110}d_{r}"> 和 <img src="https://latex.codecogs.com/svg.image?\dpi{110}d_{s}"> 分别表示的是学习衰减率以及衰减步骤。学习衰减率 <img src="https://latex.codecogs.com/svg.image?\dpi{110}d_{r}"> 要严格小于1。
+读者如果想要了解更多细节，可以查看 DeepPot-SE (DP)方法的原始文章<a href="https://proceedings.neurips.cc/paper/2018/file/e2ad76f2326fbc6b56a45a56c59fafdb-Paper.pdf">DeepPot-SE</a>.</p>
+<p>5.. 神经网络的输入是描述符而非直接的坐标-能量/力 pair。</p>
+<p>6..  神经网络拟合势函数。</p>
+<p>7..  其中损失函数由能量，原子受力等决定，权重系数决定了更新方向速度快慢。</p>
+<hr />
+<p>对于DeepMD的原理以上介绍远不止于此，强烈建议将原文献去理解与阅读。下一步我将针对实际操作从安装到案例详细介绍(<strong><em>以下内容是本文作者作为DeepModeling深势科技公司开发者团队志愿者参与文献翻译工作的成果，写这篇入门文档的时候以下内容深势科技公司暂未对外公开，因为还涉及了其他志愿者的成果以及未公开的原因，请勿上传到互联网上</em></strong>)。</p>
+<hr />
+<h2>简易安装</h2>
+<p>DeePMD-kit有很多简单的的安装方式，你可以按需选择。如果你希望独立编译，可以跳转到下一部分。</p>
+<p>完成了安装流程后，文件中会自带两个已经编译好的程序：DeePMD-kit(<code>dp</code>)和LAMMPS(<code>lmp</code>)，你可以尝试输入<code>dp -h</code>和<code>lmp -h</code>来获取帮助信息，考虑到你会选择并行地训练模型和运行LAMMPS，<code>mpirun</code>同样已编译好并可供使用。</p>
+<h3>安装离线软件包</h3>
+<p>CPU和GPU版本的离线软件包都在可以<a href="https://github.com/deepmodeling/deepmd-kit/releases">the Releases page</a>中找到</p>
+<p>由于Github对文件大小的限制，一些安装包被拆分成两个文件，我们可以将拆分文件都下载下来再进行合并。
+<code>bash
+cat deepmd-kit-2.0.0-cuda11.3_gpu-Linux-x86_64.sh.0 deepmd-kit-2.0.0-cuda11.3_gpu-Linux-x86_64.sh.1 &gt; 
+deepmd-kit-2.0.0-cuda11.3_gpu-Linux-x86_64.sh</code></p>
+<h3>利用Conda安装</h3>
+<p>DeePMD-kit可以利用<a href="https://github.com/conda/conda">Conda</a>安装，不过首先需要安装好<a href="https://www.anaconda.com/products/individual#download-section">Anaconda</a>或者<a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>	</p>
+<p>安装好Anaconda或Miniconda之后，我们可以创建一个包含CPU版本的DeePMD-kit和LAMMPS的虚拟环境
+<code>conda create -n deepmd deepmd-kit=*=*cpu libdeepmd=*=*cpu lammps-dp -c https://conda.deepmodeling.org</code>
+同理，也可以创建包含GPU版本的虚拟环境
+<code>conda create -n deepmd deepmd-kit=*=*gpu libdeepmd=*=*gpu lammps-dp cudatoolkit=11.3 horovod -c https://conda.deepmodeling.org</code>
+CUDA Toolkit版本可以按需从10.1或11.3中选择</p>
+<p>如果你想安装指定版本的DeePMD-kit，例如2.0.0：
+<code>conda create -n deepmd deepmd-kit=2.0.0=*cpu libdeepmd=2.0.0=*cpu lammps-dp=2.0.0 horovod -c https://conda.deepmodeling.org</code>
+创建虚拟环境后，每次使用前需要激活环境：
+<code>conda activate deepmd</code> </p>
+<h3>利用docker安装</h3>
+<p>DeePMD-kit同样可以通过docker安装</p>
+<p>获取CPU版本：
+<code>docker pull ghcr.io/deepmodeling/deepmd-kit:2.0.0_cpu</code>
+获取GPU版本：
+<code>docker pull ghcr.io/deepmodeling/deepmd-kit:2.0.0_cuda10.1_gpu</code>  <br />
+获取ROCm版本：
+<code>docker pull deepmodeling/dpmdkit-rocm:dp2.0.3-rocm4.5.2-tf2.6-lmp29Sep2021</code>
+如果你想从源码开始安装DeePMD-kit，请点<a href="https://docs.deepmodeling.org/projects/deepmd/en/master/install/install-from-source.html">此处</a>。</p>
+<h2>如何在五分钟之内Setup一次DeepMD-kit训练</h2>
+<p>DeepMD-kit 是一款实现深度势能(Deep Potential)的软件。虽然网上已经有很多关于DeepMD-kit的资料和信息以及官方指导文档，但是对于小白用户仍不是很友好。今天，这篇教程将在五分钟内带你入门DeepMD-kit。</p>
+<p>首先让我们先关注一下DeepMD-kit的训练流程：</p>
+<p>数据准备-&gt;训练-&gt;冻结/压缩模型</p>
+<p>是不是觉得很简单？让我们对这几个步骤作更深的阐述：</p>
+<ol>
+<li><strong><em>数据准备</em></strong> : 将DFT的计算结果转化成DeepMD-kit能够识别的数据格式。</li>
+<li><strong><em>训练</em></strong> : 使用前一步准备好的数据通过DeepMD-kit来训练一个深度势能模型(Deep Potential Model)</li>
+<li><strong><em>冻结/压缩模型</em></strong> :最后我们需要做的就是冻结/压缩一个训练过程中输出的重启动文件来生成模型。相信你已经迫不及待想要上手试试啦！让我们开始吧！</li>
+</ol>
+<h3>1.4.1. 下载教程中提供的数据</h3>
+<p>第一步，让我们下载和解压教程中提供给我们的数据:</p>
+<pre><code> $ wget https://dp-public.oss-cn-beijing.aliyuncs.com/community/DeePMD-kit-FastLearn.tar
+ $ tar xvf DeePMD-kit-FastLearn.tar
+</code></pre>
+
+<p>然后我们可以进入到下载好的数据目录检查一下 (为不同的目录设置了三个目录):</p>
+<ul>
+<li>00.data：包含 VASP 结果 OUTCAR 的示例</li>
+<li>01.train：包含DeePMD-kit配置示例input.json</li>
+<li>
+<p>data：包含 DeePMD-kit 训练/验证数据的示例</p>
+<p>$ cd DeePMD-kit-FastLearn
+$ ls
+00.data 01.train data</p>
+</li>
+</ul>
+<h3>1.4.2. 数据准备</h3>
+<p>现在让我们进入到00.data目录 :</p>
+<pre><code>$ cd 00.data
+$ ls
+OUTCAR
+</code></pre>
+
+<p>目录当中有一个VASP计算结果输出<code>OUTCAR</code>文件，我们需要将他转换成DeepMD-kit数据格式。DeepMD-kit数据格式在<a href="https://deepmd.readthedocs.io/">官方文档</a>中有相应的介绍，但是看起来很复杂。别怕，这里将介绍一款数据转换神奇dpdata，只用一行python命令就能处理好数据，是不是超级方便！</p>
+<pre><code>import dpdata
+dpdata.LabeledSystem('OUTCAR').to('deepmd/npy', 'data', set_size=200)
+</code></pre>
+
+<p>在上面的命令中，我们将VASP计算结果输出文件<code>OUTCAR</code>转换成DeepMD-kit数据格式并保存在<code>data</code>目录当中，其中<code>npy</code>是指numpy压缩格式，也就是DeepMD-kit训练所用的数据格式。</p>
+<p>假设你已经有了分子动力学输出“OUTCAR”文件，其中包含了1000帧。<code>set_size=200</code>将会将1000帧分成五个子集，每份200帧，分别命名为<code>data/set.000</code>\~<code>data/set.004</code>。这五个子集中，<code>data/set.000</code>\~<code>data/set.003</code>将会被DeepMD-kit用作训练集，<code>data/set.004</code>将会被用作测试集。如果设置<code>set_size=1000</code>，那么只有一个集合，这个集合既是训练集又是测试集(当然这个测试的参考意义就不大了)。</p>
+<p>教程当中提供的<code>OUTCAR</code>只包含了一帧数据，所以在<code>data</code>目录(与<code>OUTCAR</code>在同一目录)当中将只会出现一个集合data/set.000。如果你想用对数据做一些其他的处理，更详细的信息请参考下一章。</p>
+<p>我们将跳过更详细的处理步骤，接下来我们进入到根目录当中使用教程已经为你提供好的数据。</p>
+<pre><code>$ cd ..
+$ ls
+00.data 01.train data
+</code></pre>
+
+<h3>1.4.3. 训练</h3>
+<p>开始DeepMD-kit训练需要准备一个输入脚本，是不是还有没从被INCAR脚本支配的恐惧中走出来？别怕，配置DeepMD-kit比配置VASP简单多了。我们已经为你准备好了<code>input.json</code>，你可以在&quot;01.train&quot;目录当中找到它</p>
+<pre><code>$ cd 01.train
+$ ls
+input.json
+</code></pre>
+
+<p>DeepMD-kit的强大之处在于一样的训练参数可以适配不同的系统，所以我们只需要微调<code>input.json</code>来开始训练。首先需要修改的参数是 :</p>
+<pre><code> &quot;type_map&quot;:     [&quot;O&quot;, &quot;H&quot;],
+</code></pre>
+
+<p>DeepMD-kit中对每个原子类型是按从0开始的整数编号的。这个参数给了这样的编号系统中每个原子类型一个元素名。这里我们照抄<code>data/type_map.raw</code>的内容就好。比如我们改成 :</p>
+<pre><code>&quot;type_map&quot;:    [&quot;A&quot;, &quot;B&quot;,&quot;C&quot;],
+</code></pre>
+
+<p>其次，我们修改一下邻居搜索参数 :</p>
+<pre><code>&quot;sel&quot;:       [46, 92],
+</code></pre>
+
+<p>这个list中每个数给出了某原子的邻居中，各个类型的原子的最大数目。比如<code>46</code>就是类型为0,元素为<code>O</code>的邻居最多有46个。这里我们换成了ABC，这个参数我们要相应的修改。不知道最大邻居数怎么办？可以用体系的密度粗略估计一个。或者可以盲试一个数，如果不够大DeepMD-kit会告诉你的。下面我们改成了 :</p>
+<pre><code>&quot;sel&quot;:       [64, 64, 64]
+</code></pre>
+
+<p>此外我们需要修改的参数是<code>&quot;training_data&quot;</code>中的<code>&quot;systems&quot;</code></p>
+<pre><code>&quot;training_data&quot;:{
+      &quot;systems&quot;:     [&quot;../data/data_0/&quot;, &quot;../data/data_1/&quot;, &quot;../data/data_2/&quot;],
+</code></pre>
+
+<p>以及<code>&quot;validation_data&quot;</code></p>
+<pre><code> &quot;validation_data&quot;:{
+      &quot;systems&quot;:     [&quot;../data/data_3&quot;],
+</code></pre>
+
+<p>这里我将稍微介绍一下data system的定义。DeepMD-kit认为，具有同样原子数，且原子类型相同的数据能够形成一个system。我们的数据是从一个分子动力学模拟生成的，当然满足这个条件，因此可以放到一个system中。dpdata也是这么帮我们做的。当数据无法放到一个system中时，就需要设multiple systems，写成一个list。</p>
+<pre><code> &quot;systems&quot;: [&quot;system1&quot;, &quot;system2&quot;]
+</code></pre>
+
+<p>最后我们还需要改另外一个参数 :</p>
+<pre><code>&quot;numb_steps&quot;:   1000,
+</code></pre>
+
+<p><code>numb_steps</code>表示的是深度学习的SGD方法训练多少步(这只是一个例子，你可以在实际使用当中设置更大的步数)。</p>
+<p>配置脚本大功告成！训练开始。我们在当前目录下运行 :</p>
+<pre><code> dp train input.json
+</code></pre>
+
+<p>在训练的过程当中，我们可以通关观察输出文件<code>lcurve.out</code>来观察训练阶段误差的情况。其中第四列和第五列事能量的训练和测试误差，第六列和第七列是力的训练和测试误差。</p>
+<h3>1.4.4. 冻结/压缩模型</h3>
+<p>训练完成之后，我们可以通过如下指令来冻结模型 :</p>
+<pre><code>dp freeze -o graph.pb
+</code></pre>
+
+<p>其中<code>-o</code>可以给模型命名，默认的模型输出文件名是<code>graph.pb</code>。同样，我们可以通过以下指令来压缩模型。</p>
+<pre><code>dp compress -i graph.pb -o graph-compress.pb
+</code></pre>
+
+<p>以上，我们就获得了一个或好或坏的DP模型。对于模型的可靠性以及如何使用它，我将在下一章中详细介绍。</p>
+<h2>上机教程(v2.0.3)</h2>
+<p>本教程将向您介绍 DeePMD-kit 的基本用法，以气相甲烷分子为例。 通常，DeePMD-kit 工作流程包含三个部分：数据准备、训练/冻结/压缩/测试和分子动力学。</p>
+<p>DP 模型是使用 DeePMD-kit 包 (v2.0.3) 生成的。 使用名为 dpdata (v0.2.5) 的工具将训练数据转换为 DeePMD-kit 的格式。 需要注意的是，dpdata 仅适用于 Python 3.5 及更高版本。 MD 模拟使用与 DeePMD-kit 集成的 LAMMPS（29 Sep 2021）进行。 dpdata 和 DeePMD-kit 安装和执行的详细信息可以在<a href="https://github.com/deepmodeling">DeepModeling 官方 GitHub 站点</a> 中找到。 OVITO 用于 MD 轨迹的可视化。</p>
+<p>本教程所需的文件可在 <a href="https://github.com/likefallwind/DPExample/raw/main/CH4.zip">此处</a> 获得。 本教程的文件夹结构是这样的：</p>
+<pre><code>$ ls
+00.data 01.train 02.lmp
+</code></pre>
+
+<p>00.data 文件夹包含训练数据，文件夹 01.train 包含使用 DeePMD-kit 训练模型的示例脚本，文件夹 02.lmp 包含用于分子动力学模拟的 LAMMPS 示例脚本。</p>
+<h3>准备数据</h3>
+<p>DeePMD-kit的训练数据包含原子类型、模拟盒子、原子坐标、原子受力、系统能量和维里。 具有此信息的分子系统的快照称为一帧。 一个数据系统包括许多共享相同数量的原子和原子类型的帧。 例如，分子动力学轨迹可以转换为数据系统，每个时间步长对应于系统中的一帧。</p>
+<p>DeepPMD-kit 采用压缩数据格式。 所有的训练数据都应该首先转换成这种格式，然后才能被 DeePMD-kit 使用。 数据格式在 DeePMD-kit 手册中有详细说明，可查看<a href="http://www.github.com/deepmodeling/deepmd-kit">DeePMD-kit 官方网站</a> 。</p>
+<p>我们提供了一个名为 dpdata 的便捷工具，用于将 VASP、Gaussian、Quantum-Espresso、ABACUS 和 LAMMPS 生成的数据转换DeePMD-kit 的压缩格式。</p>
+<p>例如，进入数据文件夹:</p>
+<pre><code>$ cd 00.data
+$ ls 
+OUTCAR
+</code></pre>
+
+<p>这里的OUTCAR 是通过使用 VASP 对气相甲烷分子进行从头算分子动力学 (AIMD) 模拟产生的。 现在进入python环境，例如</p>
+<pre><code>$ python
+</code></pre>
+
+<p>然后执行如下命令:</p>
+<pre><code>import dpdata 
+import numpy as np
+data = dpdata.LabeledSystem('OUTCAR', fmt = 'vasp/outcar') 
+print('# the data contains %d frames' % len(data))
+</code></pre>
+
+<p>在屏幕上，我们可以看到 OUTCAR 文件包含 200 帧数据。 我们随机选取 40 帧作为验证数据，其余的作为训练数据。</p>
+<pre><code>index_validation = np.random.choice(200,size=40,replace=False)
+index_training = list(set(range(200))-set(index_validation))
+data_training = data.sub_system(index_training)
+data_validation = data.sub_system(index_validation)
+data_training.to_deepmd_npy('training_data')
+data_validation.to_deepmd_npy('validation_data')
+print('# the training data contains %d frames' % len(data_training)) 
+print('# the validation data contains %d frames' % len(data_validation)) 
+</code></pre>
+
+<p>上述命令将OUTCAR（格式为VASP/OUTCAR）导入数据系统，然后将其转换为压缩格式（numpy数组）。DeePMD-kit 格式的数据存放在00.data文件夹里</p>
+<pre><code>$ ls training_data
+H C
+$ cat training_data/type.raw 
+set.000 type.raw type_map.raw
+</code></pre>
+
+<p>由于系统中的所有帧都具有相同的原子类型和原子序号，因此我们只需为整个系统指定一次类型信息。</p>
+<pre><code>$ cat training_data/type_map.raw 
+0 0 0 0 1
+</code></pre>
+
+<p>其中原子 H 被赋予类型 0，原子 C 被赋予类型 1。</p>
+<h3>训练</h3>
+<h4>准备输入脚本</h4>
+<p>一旦数据准备完成，接下来就可以进行训练。进入训练目录：</p>
+<pre><code>$ cd ../01.train
+$ ls 
+input.json
+</code></pre>
+
+<p>其中 input.json 提供了一个示例训练脚本。 这些选项在DeePMD-kit手册中有详细的解释，所以这里不做详细介绍。</p>
+<p>在model模块, 指定嵌入和你和网络的参数。</p>
+<pre><code>&quot;model&quot;:{
+    &quot;type_map&quot;:    [&quot;H&quot;, &quot;C&quot;],                           # the name of each type of atom
+    &quot;descriptor&quot;:{
+        &quot;type&quot;:            &quot;se_e2_a&quot;,                    # full relative coordinates are used
+        &quot;rcut&quot;:            6.00,                         # cut-off radius
+        &quot;rcut_smth&quot;:       0.50,                         # where the smoothing starts
+        &quot;sel&quot;:             [4, 1],                       # the maximum number of type i atoms in the cut-off radius
+        &quot;neuron&quot;:          [10, 20, 40],                 # size of the embedding neural network
+        &quot;resnet_dt&quot;:       false,
+        &quot;axis_neuron&quot;:     4,                            # the size of the submatrix of G (embedding matrix)
+        &quot;seed&quot;:            1,
+        &quot;_comment&quot;:        &quot;that's all&quot;
+    },
+    &quot;fitting_net&quot;:{
+        &quot;neuron&quot;:          [100, 100, 100],              # size of the fitting neural network
+        &quot;resnet_dt&quot;:       true,
+        &quot;seed&quot;:            1,
+        &quot;_comment&quot;:        &quot;that's all&quot;
+    },
+    &quot;_comment&quot;:    &quot;that's all&quot;'
+},
+</code></pre>
+
+<p>描述符se_e2_a用于DP模型的训练。将嵌入和拟合神经网络的大小分别设置为 [10, 20, 40] 和 [100, 100, 100]。 <img src="https://latex.codecogs.com/svg.image?\tilde{\mathcal{R}}^{i}"> 里的成分会从0.5到6Å平滑地趋于0。</p>
+<p>下面的参数指定学习效率和损失函数：</p>
+<pre><code>    &quot;learning_rate&quot; :{
+        &quot;type&quot;:                &quot;exp&quot;,
+        &quot;decay_steps&quot;:         5000,
+        &quot;start_lr&quot;:            0.001,    
+        &quot;stop_lr&quot;:             3.51e-8,
+        &quot;_comment&quot;:            &quot;that's all&quot;
+    },
+    &quot;loss&quot; :{
+        &quot;type&quot;:                &quot;ener&quot;,
+        &quot;start_pref_e&quot;:        0.02,
+        &quot;limit_pref_e&quot;:        1,
+        &quot;start_pref_f&quot;:        1000,
+        &quot;limit_pref_f&quot;:        1,
+        &quot;start_pref_v&quot;:        0,
+        &quot;limit_pref_v&quot;:        0,
+        &quot;_comment&quot;:            &quot;that's all&quot;
+},
+</code></pre>
+
+<p>在损失函数中, pref_e从0.02 逐渐增加到1 <img src="https://latex.codecogs.com/png.image?\dpi{110}\mathrm{eV}^{-2}">, and pref_f从1000逐渐减小到1 <img src="https://latex.codecogs.com/png.image?\dpi{110}\AA^{2}&space;\mathrm{eV}^{-2}">，这意味着力项在开始时占主导地位，而能量项和维里项在结束时变得重要。 这种策略非常有效，并且减少了总训练时间。 pref_v 设为0 <img src="https://latex.codecogs.com/png.image?\dpi{110}\mathrm{eV}^{-2}">, 这表明训练过程中不包含任何维里数据。将起始学习率、停止学习率和衰减步长分别设置为0.001，3.51e-8，和5000。模型训练步数为<img src="https://latex.codecogs.com/png.image?\dpi{110}10^6"> 。</p>
+<p>训练参数如下：</p>
+<pre><code>    &quot;training&quot; : {
+        &quot;training_data&quot;: {
+            &quot;systems&quot;:            [&quot;../00.data/training_data&quot;],     
+            &quot;batch_size&quot;:         &quot;auto&quot;,                       
+            &quot;_comment&quot;:           &quot;that's all&quot;
+        },
+        &quot;validation_data&quot;:{
+            &quot;systems&quot;:            [&quot;../00.data/validation_data/&quot;],
+            &quot;batch_size&quot;:         &quot;auto&quot;,               
+            &quot;numb_btch&quot;:          1,
+            &quot;_comment&quot;:           &quot;that's all&quot;
+        },
+        &quot;numb_steps&quot;:             100000,                           
+        &quot;seed&quot;:                   10,
+        &quot;disp_file&quot;:              &quot;lcurve.out&quot;,
+        &quot;disp_freq&quot;:              1000,
+        &quot;save_freq&quot;:              10000,
+    },
+</code></pre>
+
+<h4>模型训练</h4>
+<p>准备好训练脚本后，我们可以用DeePMD-kit开始训练，只需运行</p>
+<pre><code>$ dp train input.json
+</code></pre>
+
+<p>在屏幕上，可以看到数据系统的信息</p>
+<pre><code>DEEPMD INFO      ----------------------------------------------------------------------------------------------------
+DEEPMD INFO      ---Summary of DataSystem: training     -------------------------------------------------------------
+DEEPMD INFO      found 1 system(s):
+DEEPMD INFO                              system        natoms        bch_sz        n_bch          prob        pbc
+DEEPMD INFO           ../00.data/training_data/             5             7           22         1.000          T
+DEEPMD INFO      -----------------------------------------------------------------------------------------------------
+DEEPMD INFO      ---Summary of DataSystem: validation   --------------------------------------------------------------
+DEEPMD INFO      found 1 system(s):
+DEEPMD INFO                               system       natoms        bch_sz        n_bch          prob        pbc
+DEEPMD INFO          ../00.data/validation_data/            5             7            5         1.000          T
+</code></pre>
+
+<p>以及本次训练的开始和最终学习率</p>
+<pre><code>DEEPMD INFO      start training at lr 1.00e-03 (== 1.00e-03), decay_step 5000, decay_rate 0.950006, final lr will be 3.51e-08
+</code></pre>
+
+<p>如果一切正常，将在屏幕上看到每 1000 步打印一次的信息，例如</p>
+<pre><code>DEEPMD INFO    batch    1000 training time 7.61 s, testing time 0.01 s
+DEEPMD INFO    batch    2000 training time 6.46 s, testing time 0.01 s
+DEEPMD INFO    batch    3000 training time 6.50 s, testing time 0.01 s
+DEEPMD INFO    batch    4000 training time 6.44 s, testing time 0.01 s
+DEEPMD INFO    batch    5000 training time 6.49 s, testing time 0.01 s
+DEEPMD INFO    batch    6000 training time 6.46 s, testing time 0.01 s
+DEEPMD INFO    batch    7000 training time 6.24 s, testing time 0.01 s
+DEEPMD INFO    batch    8000 training time 6.39 s, testing time 0.01 s
+DEEPMD INFO    batch    9000 training time 6.72 s, testing time 0.01 s
+DEEPMD INFO    batch   10000 training time 6.41 s, testing time 0.01 s
+DEEPMD INFO    saved checkpoint model.ckpt
+</code></pre>
+
+<p>如图展示了训练和测试的时间计数。 在第 10000 步结束时，模型保存在 TensorFlow 的检查点文件 model.ckpt 中。 同时，训练和测试错误显示在文件 lcurve.out 中。</p>
+<pre><code>$ head -n 2 lcurve.out
+#step       rmse_val       rmse_trn       rmse_e_val       rmse_e_trn       rmse_f_val       rmse_f_trn           lr
+0           1.34e+01       1.47e+01         7.05e-01         7.05e-01         4.22e-01         4.65e-01     1.00e-03
+</code></pre>
+
+<p>和</p>
+<pre><code>$ tail -n 2 lcurve.out
+999000      1.24e-01       1.12e-01         5.93e-04         8.15e-04         1.22e-01         1.10e-01      3.7e-08
+1000000     1.31e-01       1.04e-01         3.52e-04         7.74e-04         1.29e-01         1.02e-01      3.5e-08
+</code></pre>
+
+<p>第 4、5 和 6、7 卷分别介绍了能量和力量训练和测试错误。 证明经过 140,000 步训练，能量测试误差小于 1 meV，力测试误差在 120 meV/Å左右。还观察到，力测试误差系统地（稍微）大于训练误差，这意味着对相当小的数据集有轻微的过度拟合。</p>
+<p>当训练过程异常停止时，我们可以从提供的检查点重新开始训练，只需运行</p>
+<pre><code>$ dp train  --restart model.ckpt  input.json
+</code></pre>
+
+<p>在 lcurve.out 中，可以看到训练和测试错误，例如</p>
+<pre><code>538000      3.12e-01       2.16e-01         6.84e-04         7.52e-04         1.38e-01         9.52e-02      4.1e-06
+538000      3.12e-01       2.16e-01         6.84e-04         7.52e-04         1.38e-01         9.52e-02      4.1e-06
+539000      3.37e-01       2.61e-01         7.08e-04         3.38e-04         1.49e-01         1.15e-01      4.1e-06
+ #step      rmse_val       rmse_trn       rmse_e_val       rmse_e_trn       rmse_f_val       rmse_f_trn           lr
+530000      2.89e-01       2.15e-01         6.36e-04         5.18e-04         1.25e-01         9.31e-02      4.4e-06
+531000      3.46e-01       3.26e-01         4.62e-04         6.73e-04         1.49e-01         1.41e-01      4.4e-06
+</code></pre>
+
+<p>需要注意的是 input.json 需要和上一个保持一致。</p>
+<h4>冻结和压缩模型</h4>
+<p>在训练结束时，保存在 TensorFlow 的 checkpoint 文件中的模型参数通常需要冻结为一个以扩展名 .pb 结尾的模型文件。 只需执行</p>
+<pre><code>$ dp freeze -o graph.pb
+DEEPMD INFO    Restoring parameters from ./model.ckpt-1000000
+DEEPMD INFO    1264 ops in the final graph
+</code></pre>
+
+<p>它将在当前目录中输出一个名为 graph.pb 的模型文件。 
+压缩 DP 模型通常会将基于 DP 的计算速度提高一个数量级，并且消耗更少的内存。 
+graph.pb 可以通过以下方式压缩：</p>
+<pre><code>$ dp compress -i graph.pb -o graph-compress.pb
+DEEPMD INFO    stage 1: compress the model
+DEEPMD INFO    built lr
+DEEPMD INFO    built network
+DEEPMD INFO    built training
+DEEPMD INFO    initialize model from scratch
+DEEPMD INFO    finished compressing
+DEEPMD INFO    
+DEEPMD INFO    stage 2: freeze the model
+DEEPMD INFO    Restoring parameters from model-compression/model.ckpt
+DEEPMD INFO    840 ops in the final graph
+</code></pre>
+
+<p>将输出一个名为 graph-compress.pb 的模型文件。</p>
+<h4>模型测试</h4>
+<p>我们可以通过运行如下命令检查训练模型的质量</p>
+<pre><code>$ dp test -m graph-compress.pb -s ../00.data/validation_data -n 40 -d results
+</code></pre>
+
+<p>在屏幕上，可以看到验证数据的预测误差信息 </p>
+<pre><code>    DEEPMD INFO    # number of test data    : 40 
+    DEEPMD INFO    Energy RMSE              : 3.168050e-03 eV
+    DEEPMD INFO    Energy RMSE/Natoms       : 6.336099e-04 eV
+    DEEPMD INFO    Force  RMSE              : 1.267645e-01 eV/A
+    DEEPMD INFO    Virial RMSE              : 2.494163e-01 eV
+    DEEPMD INFO    Virial RMSE/Natoms       : 4.988326e-02 eV
+    DEEPMD INFO    # ----------------------------------------------- 
+</code></pre>
+
+<p>它将在当前目录中输出名为 results.e.out 和 results.f.out 的文件。</p>
+<h3>使用LAMMPS运行MD</h3>
+<p>现在让我们切换到 lammps 目录，检查使用 LAMMPS 运行 DeePMD 所需的输入文件。</p>
+<pre><code>$ cd ../02.lmp
+</code></pre>
+
+<p>首先，我们将训练目录中的输出模型软链接到当前目录</p>
+<pre><code>$ ln -s ../01.train/graph-compress.pb
+</code></pre>
+
+<p>这里有三个文件</p>
+<pre><code>$ ls
+conf.lmp  graph-compress.pb  in.lammps
+</code></pre>
+
+<p>其中 conf.lmp 给出了气相甲烷 MD 模拟的初始配置，文件 in.lammps 是 lammps 输入脚本。 可以检查 in.lammps 并发现它是一个用于 MD 模拟的相当标准的 LAMMPS 输入文件，只有两个不同行：</p>
+<pre><code>pair_style  graph-compress.pb
+pair_coeff  * *
+</code></pre>
+
+<p>其中调用pair style deepmd并提供模型文件graph-compress.pb，这意味着原子交互将由存储在文件graph-compress.pb中的DP模型计算。</p>
+<p>可以以标准方式执行</p>
+<pre><code>$ lmp  -i  in.lammps
+</code></pre>
+
+<p>稍等片刻，MD模拟结束，生成log.lammps和ch4.dump文件。 它们分别存储热力学信息和分子的轨迹，我们可以通过OVITO可视化轨迹检查分子构型的演变。</p>
+<pre><code>$ ovito ch4.dump
+</code></pre>
+
+<hr />
+<p>下面我将介绍针对DeepMD-kit的一些使用经验</p>
+<hr />
+<p>1.首先在使用DeepMD-kit的时候应该首先对需要研究的材料体系去充分调研，需要对材料体系的性质做到足够了解，这样在准备数据集的时候，数据集所能代表的材料体系特征是足够好的。</p>
+<p>2.准备数据集的时候应该充分扩展数据集，比如我们需要训练一个300 K温度下PdSe2体系的势函数，我们在准备数据集的时候，首先我们肯定要对300K 温度下的体系做数据集，例如跑第一性原理分子动力学模拟定温在300K下，但是数据集只包含这一个温度范畴将会使得模型不稳定，一旦我们用这个势函数去LAMMPS里面做分子动力学模拟的时候温度不在300K下将使得模型预测的不准，因此我们在准备数据集的时候应该扩展300K左右温度的数据集，比如额外准备200K，100K，350K,400K等温度的数据集以此来增强模型的稳定性。</p>
+<p>3.同第二点提到的一样，为了增强模型的稳定性，我们需要充分扩展数据集，以使得数据集能够充分包含更多的构型状态以及热力学状态，比如针对不同的构型状态我们可以在VASP做第一性原理分子动力学模拟的时候加入坐标的放缩系数以增加数据集(此种情况下增加了材料发生形变的构型状态)，再比如在做更复杂的体系的时候，体系中存在不同的相，我们应该针对不同的相准备更多的数据集。</p>
+<p>4.对于齐老师组里的情况，大概率是做二维材料，因此在未二维材料准备数据集的时候，针对多层材料的情况应该考虑范德华力对层间的影响。</p>
+<p>5.还有一种想法是，针对多层的二维材料，我们做势函数的时候，先考虑一层的状态，用DeepMD为一层材料做面内的势函数，然后针对多层的情况，面内用机器学习势，层间用LJ势，相关的做法已经有学者提出过并且表现的更好，可以去找相关的文献看看做法。</p>
+<p>6.如果你用的是VASP做的第一性原理分子动力学模拟的话，应该注意数据集应该足够多，一般的话比如为300K PdSe2体系准备数据集，应当300K下做分子动力学模拟的时候，离子步数从经验上看来至少得到2500-3000 步 才稳定，因此收集3000步之后的数据，并且收集的数据也不能太少，一般几千帧至少得要。然后还得准备200K，250K，350K等周边温度的数据集，收集的数据集也应该足够多且准。</p>
+<p>7.另外在做数据集的时候，一定要去用多种方式验证数据集数据的准确性，确保做的第一性原理分动在操作层面没有问题。</p>
+<p>8.在做数据集的时候，多去看看别人是怎么做的，能够更高效的完成所需任务。</p>
+<p>8.然而肯定会存在的问题是，无论怎么去覆盖更多的构型空间和热力学空间，数据集肯定还是不能涵盖材料体系模拟的所有状态，因此DPGen这个想法应运而生，在后面我将会简单介绍DPGen。</p>
+<p>9.这里我做一个总结性的说明对以上内容：</p>
+<p>在开始一个新的 Deep Potential (DP) 项目之前，建议大家（尤其是新手）先阅读以下内容，以了解我们可以使用哪些工具、我们可能会遇到哪些问题和困难，以及我们如何顺利推进一个新的DP项目。本文的撰写重点是“<strong>局域构型空间</strong>”，这对于在处理DP项目时思考、分析和解决问题非常有用。本文分为三个主要部分:
+1. “了解你的工具箱” ：从局域构型空间的视角，简要介绍了DP方法以及DP-GEN（Deep Potential GENerator）和DP Library（Deep Potential Library）。
+2. “了解系统的物理性质” ：简单讨论了如何根据研究对象的属性设置参数，这可能对新手有所帮助。
+3. “了解问题的边界”：探讨如何以最有效的方式生成满足我们要求的DP模型，或者我们如何将项目切割成碎片并使项目更易于实施。</p>
+<h2>了解你的工具箱</h2>
+<p>了解你的工具箱意味着你不仅需要知道工具箱里有什么，这些工具可以用来做什么，还知道这种工具的局限性以及使用这些工具时可能会发生什么样的风险。</p>
+<h3>DP</h3>
+<p>深度势能 (DP) 是一种通过深度神经网络拟合原子间相互作用势（也叫势能面，potential energy surface, PES）的方法。训练数据集通常是由基于密度泛函理论（density functional theory, DFT）的方法计算获得。 相关软件是<a href="https://github.com/deepmodeling/deepmd-kit">DeePMD-kit</a>。DP方法通用性高、准确性高、计算效率高且并行效率高，是最受欢迎的机器学习势之一。
+<img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/DP.png" alt="DP" />与其他机器学习势类似，DP的核心思想是系统的总能量可以划分为单个原子的势能之和，$E=∑<em>{i=0}^{n}E</em>i$, 其中每个原子的势能 $E_i$ 取决于它的局域原子构型。每个原子都由一个DP深度神经网络模型来描述 $E<em>i$。DP 模型由两组神经网络组成。第一组是嵌入网络，被设计为满足基本的不变性（置换、平移、旋转）要求，并将原子的局域环境编码为描述符。第二个是拟合网络，它将嵌入网络的输出映射到 $E</em>i$. 
+<img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/DP_Illustration.png" alt="DP_Illustration" /></p>
+<h4>构型空间</h4>
+<p>局域构型空间包括空间构型和化学构型。对于空间构型，以碳为例，可以结晶成石墨或金刚石。在石墨中，每个碳原子通过$\rm{sp}^2$键与其他三个碳原子相连 ，形成平面结构。在金刚石中, 每个碳原子通过 $\rm{sp}^3$ 键与其他四个碳相连。此外，碳还可以形成许多其他结构， 例如无定形结构，富勒烯等。除了局部原子结构的这些明显差异外，原子相对平衡位置的偏离也属于空间构型。对于化学构型，我们以理想的BCC晶格为例。在最简单的情况下，所有晶格位置都被同一个原子占据，例如Ti。另一种情况是四角被Ti占据，内中心被Al占据，是B2结构的有序TiAl化合物。因此，Ti周围的局域化学环境发生了变化。在更复杂的情况下，所有位点可能被不同的原子随机占据，例如高熵合金，可能导致巨大的化学构型空间。需要强调的是，这种划分为了便于理解做的概念性划分。实际上，空间构型和化学构型是耦合在一起的，不能明确分离开。</p>
+<p><img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/Configuration.png" alt="Configuration" /></p>
+<h4>采样方法</h4>
+<p>综上所述，在开发新的DP模型时&quot;<strong>我们所需要做的就是尽可能覆盖足够的局域构型空间</strong>&quot;。这里介绍实践中常用的局域构型空间采样方法。粗略地，这些方法可以分为四类：手动设计、MD+MC模拟、结构搜索和增强采样。
+- 手动设计
+  尽管可以使用多种多样的方法来辅助采样，但手动设计仍然是最重要的采样方法之一，尤其是对于缺陷结构的采样。例如，间隙、空位、层错、位错、表面、晶界的初始结构几乎总是需要人为构建。在其他一些情况下，初始结构也需要由专家构建，例如不同材料之间的相界面、吸附结构等。
+ - MD+MC模拟
+  MD和MC模拟是对局域构型空间进行采样的有效方法，也是最易实现的方法。例如，原子在固体中围绕平衡位置附近的振动（MD），液体中的局域环境的变化（MD），在固溶体中交换相似原子（MD+MC）等。MD/MC 模拟可以覆盖的构型空间取决于模拟的温度和时间。在实践中，也可以采用其他加速MD方法来更有效地辅助采样。
+- 结构搜索
+  结构搜索方法，例如<a href="http://www.calypso.cn/">CALYPSO</a>，<a href="https://uspex-team.org/en">USPEX</a>，有助于探索具有强方向键的材料的合理结构，(例如大多数陶瓷，以及一些其他无机非金属材料碳、硼、磷等) 或高压下的未知结构。在这种情况下，手动构建和MD+MC遍历能力不足。由于我们需要覆盖足够的构型空间，因此在结构搜索过程中，不仅需要收集稳态结构来丰富我们的数据集，还需要那些能量不是很高的亚稳态结构。
+-增强采样
+  增强采样是一种对稀有事件进行采样的有效方法，通常用于对PES周围的鞍点进行采样。在一个系统中，构型被采样的概率是 $p \propto exp(-U/k_BT)$。因此，高能态，例如相变中间态、反应的过渡态，很难通过MD模拟进行采样。在增强采样方法中，通常会添加偏置势以使PES变平，从而增强高能态被访问的概率。</p>
+<p><img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/Sampling_methods.png" alt="Sampling_methods" /></p>
+<h4>局限性和风险</h4>
+<p>由于机器学习模型有较好的表示和拟合能力，机器学习势比传统经验势更精确。但是，硬币总有正反面。几乎所有机器学习都有一个典型的缺点，即样本分布外的外推能力低。如下图所示，该模型在数据集覆盖的区域拟合得非常好，而在数据集未覆盖的区域预测了完全错误的结果。在这个例子中，由于靠近原子核区域缺乏排斥力，两个原子可能会非物理地结合在一起。通常，在采样期间，彼此靠得非常近的原子对是不在数据集中的。为了避免这种非物理结合，可以在这个区域人为地设计一些排斥势，或者在数据集中添加双原子构型，让模型自己学习近核排斥。
+<img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/Risks.png" alt="Risks" />
+&emsp;这只是一个简单的例子来说明如果训练数据集在局域构型空间上的覆盖率很差，模拟中可能发生的非物理现象的风险。这里说明机器学习势的这种风险，并不是鼓励人们在训练DP模型时覆盖所有构型空间。相反，在“了解问题的边界”一节中，我们鼓励大家对研究问题所在的构型空间区域进行采样。这意味着训练一个对所研究问题足够准确的DP模型即可。理论上讲，在某些情况下，构型空间可能会太大而无法完全采样。所以, “<strong>训练一个全局可用的稳定DP模型并不是一件容易的事</strong>”。</p>
+<h2>了解系统的物理性质</h2>
+<p>当实施一个DP项目时，有许多参数需要确定。例如：生成初始数据集时，形变量和位移量；利用分子动力学采集构型空间时，温度、压强和模拟步数等。虽然可以从其他地方复制一些脚本并且在不怎么修改参数的情况下运行DP-GEN，但在实践中这并不是一个好办法。我们需要了解研究体系的物理性质以便帮助设计各种参数，获得更优的实践经验。 
+&emsp; 局域构型空间的势能面形状取决于与之相关的键合强度。下图显示了化学键强度图谱。与弱化学键的相关的构型空间对应的局部势能面形状是相对平缓的，而与强化学键相关的构型空间对应的局部势能面形状是尖锐的。
+<img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/bond_nature.png" alt="bond_nature" />
+1.尖锐区域：势能面中的深谷
+-单个分子的振动
+-固体中原子的振动
+2.平缓区域：势能面中的浅坑
+-液体中原子或分子的运动
+-固溶体
+3.势垒区域：
+-相变路径中间态
+-反应的过渡态
+以液体分子为例。分子内的化学键对应一个尖锐的势能面，对应于构型空间中原子在平衡位置附近的振动。振动的特征时间非常短(~fs)，因此在短时间MD模拟中，对构型空间的采样可能就比较充分了。相比之下，分子间化学键对应一个平缓的势能面，在构型空间中体积较大。分子间相互移动的特征时间较大（-ps），因此构型空间中的充分采样需要长时间MD模拟，或从不同构型开始的许多短时间MD模拟。类似的考虑也适用于化学构型空间。以$\rm{Zr}<em>{1−x}{Hf}</em>xC$为例，众所周知，改变Zr-Hf并不会显著改变能量，这与平缓的势能面相对应，因此就需要较多的MC步数来对构型空间进行采样。然而，反位缺陷Zr-C或Hf-C的能量非常高。因此，可能不需要对反位缺陷进行采样。
+<img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/PES.png" alt="PES" />
+&emsp;为了简单起见，以Al为例来阐述材料的物理性质与DP-GEN参数之间的关系。
+1.首先需要生成初始数据集。例如，使用DP-GEN中提供的“init<em>bulk”方法。在该方法中，我们需要设置整体的单轴压缩/膨胀、晶格变形以及原子移动的范围。通常，对于固体材料而言，从室温到熔点的体积膨胀约为5%，沿每个方向约为2%。因此，除了在高压区域外，将线性压缩/膨胀范围设置为±2%通常可以很好地覆盖固体边界。随机的晶格变化也可以设置为类似的值，例如，对于每个应变模式可以取为[-3%，3%]间的随机数。原子位置移动的值可参考最近邻的键长（例如&lt;1%d，其中d为键长）。一般情况下可以设为0.01Å。
+2.当使用DP-GEN自动迭代时，我们一般通过不断增加温度和压强进行MD模拟对构型空间进行采样。温度的设置可以参考Al的熔点Tm (~1000 K）与此同时，关于压强的设置可以参考 铝的体模量B (~80 GPa)。例如，可以将温度设置为四组：[0.0Tm，0.5Tm]，[0.5Tm，1.0Tm]，[1.0Tm，1.5Tm]和[1.5Tm，2.0Tm]。在每组中可以选择几个温度值，例如，可以将[0.0Tm，0.5Tm]分成[0.0Tm，0.1Tm，0.2Tm，0.3Tm，0.4Tm]（实际上，0.0Tm是无用的）。在MD模拟的过程中，压力会发生波动，在小体系中，其幅度可能约为体模量的1%。因此，将压强设定为[0.00B、0.03B、0.06B、0.09B]通常就足够了。添加-0.01B可能有助于固体结构的采样，一般不会为液体结构设置负压，以避免模拟盒子持续膨胀的风险。
+3.选择候选构型的上下限（“trust<em>level</em>low”和“trust</em>level<em>high”）可能取决于体系中最强的化学键。例如，分子体系中的值可能高于金属体系中的值。在固体中，上限和下限约为力的RMSE（约化均方误差）$\sqrt{\sum f</em>i^2} $的0.2和0.5。此外，上下限取值也可参考熔点或体模量，因为力与这些性质成正比。例如，对于Al来说DP-GEN的“trust<em>level<em>low”为0.05 eV/Å，而W的“trust</em>level</em>low”为0.15 eV/Å，其值是Al的三倍。W的熔点（~3600 K）也是Al熔点（~1000 K）的约三倍。当对照上述键合强度图谱时，这些物性可以作为好的参考指标，用来辅助设定DP-GEN的参数。然而，这些标准可能不适用于液体分子。这是由于液体分子内键合很强，即使它们的熔点很低，但仍然需要相对较高的上下限值。</p>
+<h3>了解问题的边界</h3>
+<p>请记住，“<strong>训练一个全局可用的稳定DP模型并不是一件容易的事</strong>”。通常，我们只需要一个符合我们要求的DP模型。对于不同的任务，数据集需要覆盖的构型空间范围是不同的。下面举一个例子来说明：
+1.我们对Al的室温弹性性能感兴趣
+-我们对Al弹性性质的温度依赖性更感兴趣
+2.我们对Al的熔点感兴趣
+-我们对Al的凝固过程更感兴趣
+3.我们对铝的缺陷（例如，空位、间隙、位错、表面、晶界）感兴趣
+<img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/Example_Al.png" alt="Example_Al" />;在第一种情况下，计算弹性性质只需要平衡态附近小形变构型。因此，只需要铝固态的平衡态附近的数据。运行DP-GEN从000到006对应的迭代可能就足够了。此外，如果我们想知道弹性性质的温度依赖关系，应该添加从007到024的迭代，进一步采样铝固态的高能状态（例如，热膨胀导致的晶格膨胀）。
+&emsp;在第二种情况下，图中的所有迭代都应该进行，对铝的固态和液态构型都进行采样。然而，如果我们关心液态铝的形核细节。数据集可能足以（或不足以）准确描述固液界面。通常情况下，如果材料中的键合方向性不强，例如，对于大多数金属而言数据集就足够了。有时，当材料中的键合具有强方向性时，情况并非如此。例如，Ga、Si等。然后，应在DP-GEN过程中结合增强采样的方法对一些特殊构型进行取样，例如，形核。如图所示可以沿图中的虚线进行多次模拟，以收集鞍点周围的构型。
+&emsp;在第三种情况下，需要基于缺陷构型（例如，空位、间隙、位错、表面、晶界）进行额外的DP-GEN过程。幸运的是，缺陷周围的一些局部原子结构可能类似于一些扭曲的晶格结构或非晶结构。因此，在采样期间，没有必要完全包括所有缺陷构型。
+&emsp;从这个简单的例子可以看出，如果能很好地定义一个问题的边界，大部分工作都可以节省下来。例如，如果我们只关心铝的弹性性质，就没有必要对熔体或缺陷构型进行采样，即便一般而言在开发金属的DP模型时都会对熔体和缺陷构型进行采样。相比之下，在开发化合物的DP模型时，尤其是对于那些具有复杂结构的化合物，只有在必要时才对熔体和缺陷构型进行采样。因此，在开始一个新问题之前，需要花一些时间思考问题的边界在哪里，以及应该覆盖多大的构型空间。
+&emsp;当我们得到一个新项目时，与其过于兴奋迫不及待地付诸实践，倒不如先将项目分割成一些更容易实现的小目标，这可能有助于整个项目的实施。例如，如果我们的最终目标是研究Al的缺陷，我们可以将整个问题分成几个部分并分阶段进行，如上文所述的阶段1、2和3。在每个阶段之后，我们可以获得一些里程碑成果，之后再顺利进入下一阶段。</p>
+<hr />
+<p><strong><em>DPGen</em></strong></p>
+<hr />
+<p>(以下部分涉及了第一性原理计算和DeepMD的相关知识，得先了解前两个再来学习)</p>
+<p>DP-GEN是“Deep Potential GENerator”的缩写，是在同步学习框架下设计的DeepMD模型自动生成器,其核心是一个协调DeepMD，VASP，LAMMPS的脚本。在DP-GEN中，数据集的增加和DP模型的改进是同时进行的。<a href="https://github.com/deepmodeling/dpgen">DP-GEN</a>软件可以自动管理整个流程，包括准备作业脚本 (例如训练模型，探索构型空间、检查现有模型在构型空间的准确性并筛选出准确性不足的候选构型，以及通过DFT计算给候选构型打标签), 将作业提交到云计算或其他高性能计算集群上, 并监控工作状态。下图显示了一个典型的DP-GEN自动迭代流程，包括三个典型的过程：
+1. 训练一组DP模型（通常是四个），这些模型将被用来探索构型空间并检查探索的构型是否能够被准确预测。
+2. 采样和筛选：基于训练得到的势函数和指定的初始结构利用LAMMPS进行classical MD，扩展构型空间。然后对MD中得到的构型依照特定指标（对某个构型用不同的势函数预测所得的原子力的标准差）进行筛选（GPU）。
+3. 选择一些预测精度较低的构型作为候选构型，并通过DFT计算给候选构型打标签，然后将这些重新计算的DFT数据送进第一步中训练，以此循环直到达到精度。</p>
+<p>最初，需要提供一个包含数百至数千个DFT计算获得的数据集（初始数据集），之后便可以启动并连续运行DP-GEN的自动迭代流程。初始数据集可以由DP-GEN软件生成 (例如通过使用&quot;init<em>bulk&quot;, &quot;init</em>surf&quot;模块,或者&quot;autotest&quot; 模块), 也可以自己生成。在DP-GEN迭代过程中，数据集对构型空间的覆盖范围是有限的，尤其是在前几轮迭代中。正如在“局限性和风险”一节中所讲，在此时数据集上训练的DP模型能力也是受限的。当构型在已探索区域内时，模型能够准确预测该构型；当构型稍微超出已探索区域的边界时，预测结果准确性不足；当构型远离已探索区域时，预测则是错误的。此外，当使用DP模型探索构型空间时（例如通过MD），当构型远离已探索区域时，可能会出现非物理构型。为了避免选择非物理构型，只选择已探索区域边界附近的那些构型作为候选。因此，选择候选构型时需要设置预测偏差的上下限。在实践过程中，如果存在可用的经验势，则可以使用经验势来进行采样，这将更加稳健，并且可以避免出现非物理构型。在这种情况下，可以将预测偏差的上限设置为一个较大的值。通过改变采样方法或采样参数，探索区域的边界随着迭代而扩展，例如增加MD温度和模拟时间。
+<img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/DP_GEN.png" alt="DP-GEN" /></p>
+<p>在实际的实践中，单独只使用DeepMD-kit的话对数据集的要求很高，这样带来的结果是为数据集准备的时间成本过大，大多数做的比较出色的成果都结合使用了DPGen。</p>
+<p>对于DPGen相关的文献肯定是要看一下的<a href="https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.3.023804">Deepgen</a></p>
+<p>针对DPGEN仅仅只使用文字来描述的话比较乏力且不高效，建议去详细阅读提及的文献，另外厦大的一个做相关方向的组做了相关的教学视频<a href="https://www.bilibili.com/s/video/BV1Ba4y1j7He">DPGen教学视频</a>,另外很有必要科学上网去github上阅读官方文档<a href="https://github.com/deepmodeling/dpgen">github入口</a>。</p>
+<p>有关安装和运行步骤在此就不像DeepMD那样详细介绍了，因为涉及的东西很多，罗列出来担心有缺漏或不全面，但是一定要去阅读官方文档和相关文献。官方文档中DPGen的下载是包含了DeepMD的，所以建议重新建一个环境，另外DPGen也包含了编译好的能够用DP势的LAMMPS。</p>
+<p>齐老师的组内，在我写这篇文献的时候是一台52核cpu和3090的GPU，GPU是够用了，但是52核的cpu装了Slurm集群管理环境，所以在用DPGen跑的时候，运行到第三阶段fp阶段的时候，应当在输入脚本中合理地输入一次计算任务时做多少组第一性原理计算，不然会爆内存出错的。</p>
+<p>另外针对输入脚本的建议，一个是parameter.json，这个是控制DeepMD，VASP，LAMMPS三个软件的具体设置参数，针对DeepMD以上已经详细介绍过了，另外两个组内有师兄可以请教他们有关学习建议。另外一个是machine.json，因为我们用的是slurm集群所以在输入上和官方文档有所不同，此处提供一个大佬的有关配置教学视频<a href="https://www.bilibili.com/video/BV1h94y1o72C?spm_id_from=333.337.search-card.all.click">machine.json配置教学视频</a>。</p>
+<p>当用DPGen做了很多轮数计算精度收敛之后，这个时候应当收集每一轮所用到的数据集，然后将它们打包，自己手动重新用这些数据集单独跑一次DeepMD-kit，然后再拿出训练好的势函数去验证。</p>
+<p>此处提供一个深度势能公司提供的一个DP library，里面有相关的一些已经有的材料体系的总结。</p>
+<h3>DP Library</h3>
+<p>DFT方法计算量大且非常耗时。因此建立了<a href="https://dplibrary.deepmd.net/">DP library</a>共享DFT计算源数据，以避免由于重复计算造成的浪费，并鼓励大家贡献自己的DFT源数据，丰富数据集，并不断改进DP模型。有了这个基础设施，对构型空间不同区域的采样可以由不同的研究人员贡献，如下图所示。当数据集更加丰富时，可以自动重新训练和改进DP模型。最后，在<a href="https://dplibrary.deepmd.net/">DP library</a>上会得到许多DP模型。这些模型适用于大多数问题，以便研究人员可以将精力集中于应用DP模型解决实际问题，而不是耗费在构建DP模型中。当我们需要一个DP模型时，可以按照以下步骤检查应该做什么：
+1. 检查是否存在训练好的模型，直接从<a href="https://dplibrary.deepmd.net/">DP library</a>下载模型
+2. 如果不存在，检查是否<a href="https://dplibrary.deepmd.net/">DP library</a>上是否存在可用的DFT数据集，自己添加一些数据并训练一个模型
+3. 如果既没有训练好的模型也没有任何有价值的数据，则从头开始生成数据并从头开始训练模型
+5. 如果你愿意，将DFT源数据和模型贡献给<a href="https://dplibrary.deepmd.net/">DP library</a>，以方便更多人使用你的数据或者模型。</p>
+<p><img src="https://dp-public.oss-cn-beijing.aliyuncs.com/community-tutorial/DP_LIB.png" alt="DP_LIB" /></p>
+<hr />
+<hr />
+<p>最近出了一篇非常有用的有关的DP的综述，在学习完之后可以去看看大家都是怎么做的。<a href="https://arxiv.org/pdf/2203.00393.pdf">DP综述</a>
+最后有必要关注一下深势科技公司的公众号，有关最新的研究进展以及一些有用的教学视频在这都会发布。公众号名称：深度势能</p>
+<p>最后放一下我的微信LIGAUYER,因为博士也是做相关的研究希望看过这篇文档的同道人可以给我提供珍贵的意见以及相互交流合作一起进步！还有就是有一个DeepMD和DPGen开发者用户群，群内讨论我觉得是快速提升水平和经验的渠道，目前入群只能通过拉人的方式，有想入群的同学我可以帮忙拉一下~</p>
+<hr />
+<p>欧阳冠宇</p>
+<p>2022年5月29日</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
